@@ -53,7 +53,6 @@ for i in range(0, len(input_range)):
 print(invalid_range)
 
 sum = 0
-
 for l in invalid_range:
     sum += l
 
