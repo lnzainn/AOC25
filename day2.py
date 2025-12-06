@@ -1,7 +1,7 @@
 # with open('input.txt', 'r') as f:
 #     input_range = f.readline()
 
-input_range = '110-111'
+input_range = '100-12000'
 invalid_range = []
 
 input_range = input_range.split(',')
@@ -16,31 +16,28 @@ for i in range(0, len(input_range)):
             if str(j)[0:int(len(str(j))/2)] == str(j)[int(len(str(j))/2):]:
                 invalid_range.append(j)
 
-        elif len(str(j)) % 3 == 0:    # For cases like 13 13 13
-            nsum = 0
-
-            for a in range(int(str(j)[0]), len(str(j))):
-                nsum += a
-            print(a)
+        elif len(str(j)) % 3 == 0:    # For cases like 13 13 13 
+            if str(j)[0:3] == str(j):
+                pass
 
 
+        else:
+            lj = str(j)
+            ll = len(lj)
+            if lj[0:int(ll/2)] == lj[int(ll/2)+1::] and lj[0] == lj[int(ll/2)]:
+                invalid_range.append(j)
 
 
-
-        elif len(str(j)) % 1 == 0:
-            pass
-
-            
 
 
 
             
-# print(invalid_range)
-# sum = 0
+print(invalid_range)
+sum = 0
 
-# for l in invalid_range:
-#     sum += l
+for l in invalid_range:
+    sum += l
 
-# print(sum)
+print(sum)
 
 
